@@ -4,16 +4,16 @@ description: Build and verify the next part of the Claude Code demo (caffeine tr
 ---
 
 The demo has four parts, each a git tag: `part-1-architecture` (in the sibling
-repo `../caffeine-tracker`, frozen), then `part-2-app`, `part-3-tests` and
+repo `../Part 1 - Architecture`, frozen), then `part-2-app`, `part-3-tests` and
 `part-4-prod` in the build repos. Each build part lives in its own folder,
 cloned from the previous one, so every part can be shown on its own.
 
 1. Find the next part: `git tag` in this repo shows the parts done so far. The
-   runbook is `../caffeine-tracker/docs/DEMO-RUNBOOK.md`: read the section for
+   runbook is `../Part 1 - Architecture/docs/DEMO-RUNBOOK.md`: read the section for
    the next part for its prompts and "things to show". Read `CLAUDE.md` and
    `docs/ARCHITECTURE.md` here before changing anything structural.
 2. Start the part in a new sibling folder named for it (for example
-   `../caffeine-tracker-prod` for Part 4): `git clone` this repo there, so the
+   `../Part 4 - Production` for Part 4): `git clone` this repo there, so the
    history and tags carry over, then `npm install` and
    `npx playwright install chromium`. Work there from then on; leave this folder alone.
 3. Do the part's work. Keep files small and well named; TypeScript throughout;
