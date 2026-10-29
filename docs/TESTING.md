@@ -33,6 +33,13 @@ which is how the "laptop went to sleep" test works.
 so a test can assert that a system notification was sent, or that the in-page
 banner appeared when notifications are blocked.
 
+## Failure artifacts
+
+On a failure Playwright keeps, under `test-results/<test>/`: `test-failed-1.png`
+(the page at the moment of failure), `video.webm` (the whole test), `trace.zip`
+(every action with DOM snapshots; open with `npx playwright show-trace <path>`
+or from the HTML report), and `error-context.md` (the page's accessibility tree).
+
 ## The store contract
 
 `packages/core/src/testing.ts` exports `storeContract(name, make)`: one suite

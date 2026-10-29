@@ -12,6 +12,7 @@ export default defineConfig({
     baseURL: `http://127.0.0.1:${PORT}`,
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
+    video: "retain-on-failure",
     // Every test runs as a user in Toronto so work hours are predictable.
     timezoneId: "America/Toronto",
     locale: "en-CA",
