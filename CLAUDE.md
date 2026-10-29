@@ -23,7 +23,8 @@ changes during the build, update it and note the change in its
 
 ## Commands
 - `npm run dev` starts the app (Vite). Add `?demo=1` to the URL for demo mode.
-- `npm test`, `npm run typecheck`, `npm run build`.
+- `npm test` (unit), `npm run test:e2e` (Playwright), `npm run test:all`, `npm run typecheck`, `npm run build`.
+- Testing guide, including how the fake clock works: `docs/TESTING.md`.
 
 ## Rules
 - Keep it free and simple: no server, database, accounts or paid services.
@@ -39,4 +40,6 @@ changes during the build, update it and note the change in its
 - Styling: terminal theme with light and dark modes (ARCHITECTURE.md section 8).
   Use the CSS colour tokens (`var(--accent)` and so on), never raw hex in components.
 - Every built-in drink in `drinks.json` needs a `source`. Don't make up caffeine values.
-- Every change to `packages/core` comes with tests.
+- Every change to `packages/core` comes with tests. A new screen or flow comes
+  with a Playwright test in `e2e/`, using role and label selectors.
+- End-to-end tests control time with Playwright's fake clock; never add sleeps.

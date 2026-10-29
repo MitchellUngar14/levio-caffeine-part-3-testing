@@ -22,10 +22,14 @@ npm run dev
 Open the printed URL. Add `?demo=1` to get a reminder within a minute.
 
 ```bash
-npm test          # unit and contract tests
+npm test              # unit and contract tests (Vitest)
+npm run test:e2e      # end-to-end tests (Playwright, Chromium)
+npm run test:all      # both
 npm run typecheck
-npm run build     # static files in apps/web/dist
+npm run build         # static files in apps/web/dist
 ```
+
+First time only: `npx playwright install chromium`. See `docs/TESTING.md`.
 
 ## Layout
 
@@ -34,7 +38,8 @@ apps/web        React + Vite app: Today, Calendar and Settings screens, reminder
                 LocalStorageStore and the StoreProvider / useStore hook
 packages/core   Pure rules (shouldRemind, nextReminderAt, dailyTotals), drink search,
                 drinks.json, the CaffeineStore interface, InMemoryStore, contract tests
-docs            Living copy of the architecture (see "Changes since Part 1")
+e2e             Playwright tests, one file per screen, plus reminders
+docs            Living copy of the architecture (see "Changes since Part 1") and TESTING.md
 ```
 
 ## Caffeine figures
